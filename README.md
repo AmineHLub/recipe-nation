@@ -10,7 +10,7 @@ This is a website that features different types of famous meals and provide thei
 
 ## Built With
 
-- HTML, CSS, JavaScript
+- HTML, CSS, Bootstrap, JavaScript
 - Webpack
 - Jest
 - Meals DB API

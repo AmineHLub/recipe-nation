@@ -1,0 +1,12 @@
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-link ul {
+    align-items: center;
+    justify-content: space-evenly;
+}
