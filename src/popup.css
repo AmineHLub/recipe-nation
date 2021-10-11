@@ -1,0 +1,68 @@
+
+.effects {
+  pointer-events: none;
+  background-color: #0000006e;
+  overflow: hidden;
+}
+
+.popup-modal {
+  pointer-events: auto;
+  overflow: auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 90%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 -2px 14px 2px rgba(0, 0, 0, 0.42);
+}
+
+.close-btn {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+}
+
+.popup-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 3%;
+}
+
+.popup-meal-img {
+  width: 30%;
+  height: 180px;
+  border-radius: 50% 0;
+}
+
+.popup-meal-name {
+  margin-top: 10px;
+}
+
+.popup-meal-description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  margin: 0.75rem 10%;
+}
+
+.meal-area {
+  grid-area: 1 / 1 / 2 / 2;
+  margin-left: 20%;
+}
+
+.meal-type {
+  justify-self: end;
+  grid-area: 1 / 2 / 2 / 3;
+  margin-right: 20%;
+}
+
+.meal-instructions {
+  grid-area: 2 / 1 / 5 / 3;
+}
