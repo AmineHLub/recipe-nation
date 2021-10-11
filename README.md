@@ -78,3 +78,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 - This project is [MIT](./Licenses/MIT.md) licensed.
+- Adobe Spark [License](./Licenses/Adobe.md)
