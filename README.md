@@ -53,11 +53,11 @@ npm run test
 - Twitter: [@Amino47612441](https://twitter.com/Amino47612441)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-amine-hajltaief-b18863163/)
 
-👤 **Author1**
+👤 **Mahbub Alam**
 
-- GitHub: [@AmineHLub](https://github.com/AmineHLub)
-- Twitter: [@Amino47612441](https://twitter.com/Amino47612441)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-amine-hajltaief-b18863163/)
+- GitHub: [@mahbubul14](https://github.com/mahbubul14)
+- Twitter: [@twitterhandle](https://twitter.com/mahbubul_14)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mahbubul-alam-20595/)
 
 
 
