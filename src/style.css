@@ -1,12 +1,43 @@
 ul li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  box-shadow: 0 -2px 14px 2px rgba(0, 0, 0, 0.42);
+}
+
+.nav-link {
+  padding: 0;
 }
 
 .nav-link ul {
-    align-items: center;
-    justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.nav-link ul > li > a {
+  color: brown;
+}
+
+.nav-link ul > li > a:hover {
+  color: rgb(100, 24, 24);
+}
+
+footer {
+  position: absolute; /* will be removed later */
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 14px 2px rgba(0, 0, 0, 0.42);
+  height: 4rem;
+  justify-content: space-around;
+  align-items: center;
 }
