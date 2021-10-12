@@ -1,9 +1,9 @@
 import closeIcon from './assets/close-icon.png';
 
 const generatePopup = async () => {
-  const fetchScores = fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata');
-  const update = await fetchScores;
-  const jsonObject = await update.json();
+  const fetchMeal = fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata');
+  const get = await fetchMeal;
+  const jsonObject = await get.json();
   const mealObj = jsonObject.meals[0];
   const popup = document.createElement('div');
   const closeButton = document.createElement('a');
