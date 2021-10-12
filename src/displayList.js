@@ -12,7 +12,7 @@ const sendList = async () => {
     const lineBreak = document.createElement('br');
     const reserveBtn = document.createElement('input');
     commentBtn.type = 'button';
-    commentBtn.value = 'button';
+    commentBtn.value = 'Comments';
     reserveBtn.type = 'button';
     reserveBtn.value = 'Reservations';
 
@@ -26,6 +26,8 @@ const sendList = async () => {
     image.src = `${mealObj.strMealThumb}`;
     heading.innerText = `${mealObj.strMeal}`;
 
+    commentBtn.classList.add('c-btn');
+    reserveBtn.classList.add('r-btn');
     items.classList.add('item');
     image.classList.add('item-image');
   }
