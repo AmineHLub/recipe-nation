@@ -1,6 +1,10 @@
 import closeIcon from './assets/close-icon.png';
 
-const generatePopup = () => {
+const generatePopup = async () => {
+  const fetchScores = fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata');
+  const update = await fetchScores;
+  const jsonObject = await update.json();
+  const mealObj = jsonObject.meals[0];
   const popup = document.createElement('div');
   const closeButton = document.createElement('a');
   const closeLogo = document.createElement('img');
@@ -28,17 +32,16 @@ const generatePopup = () => {
   closeButton.append(closeLogo);
   closeLogo.src = closeIcon;
   wrapper.append(image);
-  image.src = 'https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg';
+  image.src = `${mealObj.strMealThumb}`;
   wrapper.append(mealName);
-  mealName.innerText = 'Mealname';
+  mealName.innerText = `${mealObj.strMeal}`;
   wrapper.append(mealDescription);
   mealDescription.append(mealType);
   mealDescription.append(mealArea);
   mealDescription.append(mealInstructions);
-  mealArea.innerText = 'Area : Turkey';
-  mealType.innerText = 'Type : Main';
-  mealInstructions.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eligendi aliquid, perferendis quibusdam dolorum at, possimus asperiores cupiditate debitis quidem'
-  + 'modi excepturi quasi qui. Itaque beatae quod rem blanditiis voluptatibus.';
+  mealArea.innerText = `Area : ${mealObj.strArea}`;
+  mealType.innerText = `Type : ${mealObj.strCategory}`;
+  mealInstructions.innerText = `${mealObj.strInstructions}`;
   document.body.classList.add('effects');
   // closing
   closeButton.addEventListener('click', () => {

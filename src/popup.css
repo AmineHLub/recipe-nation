@@ -65,4 +65,7 @@
 
 .meal-instructions {
   grid-area: 2 / 1 / 5 / 3;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
 }
