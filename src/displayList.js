@@ -27,12 +27,18 @@ const sendList = () => {
         const heading = document.createElement('h5');
         const commentBtn = document.createElement('button');
         const likes = document.createElement('span');
+        const likeLink = document.createElement('a');
+        const likebtn = document.createElement('i');
+        likebtn.classList.add('far');
+        likebtn.classList.add('fa-heart');
         likes.classList.add('likes-counter');
         likes.innerText = `likes : ${likesCount}\n`;
         commentBtn.innerText = 'Comments';
         document.querySelector('main').append(items);
         items.append(image);
         items.append(heading);
+        // likeLink.append(likebtn);
+        items.append(likebtn);
         items.append(likes);
         items.append(commentBtn);
         image.src = `${res.strMealThumb}`;
