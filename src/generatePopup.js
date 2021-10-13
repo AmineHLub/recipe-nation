@@ -1,6 +1,18 @@
 import closeIcon from './assets/close-icon.png';
 
+// eslint-disable-next-line no-unused-vars
+class MessageObject {
+  constructor(mealId, username, message) {
+    this.item_id = mealId;
+    this.username = username;
+    this.comment = message;
+  }
+}
+
+const websiteID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5OvdDl22dcA0TUpGjcko';
+
 const generatePopup = async (mealId) => {
+  // first API mealdb
   const fetchMeal = fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
   const get = await fetchMeal;
   const jsonObject = await get.json();
@@ -52,28 +64,33 @@ const generatePopup = async (mealId) => {
   watchYT.target = '_blank';
   watchYT.href = mealObj.strYoutube;
   // comments
+  // Second API intervention
+  const fetchComments = fetch(`${websiteID}/comments?item_id=${24}`);
+  const getComments = await fetchComments;
+  const commentsjson = await getComments.json();
+  const commentsArr = commentsjson;
+  // creation
   const commentsWrapper = document.createElement('section');
   const commentsTag = document.createElement('span');
   popup.append(commentsWrapper);
   commentsWrapper.classList.add('comment-section');
   commentsWrapper.append(commentsTag);
   commentsTag.classList.add('comment-span');
-  commentsTag.innerText = `Comments (3)`;
-  for (let i = 0; i < 4; i += 1 ) {
+  commentsTag.innerText = `Comments (${commentsArr.length})`;
+  for (let i = 0; i < commentsArr.length; i += 1) {
     const comments = document.createElement('ul');
     comments.classList.add('comments');
     commentsWrapper.append(comments);
     const date = document.createElement('li');
     comments.append(date);
-    date.innerText = '2016';
+    date.innerText = `${commentsArr[i].creation_date} `;
     const username = document.createElement('li');
     comments.append(username);
-    username.innerText = 'Alex : ';
+    username.innerText = `${commentsArr[i].username} : `;
     const message = document.createElement('li');
     comments.append(message);
-    message.innerText = 'My name is Alex !';
+    message.innerText = ` "${commentsArr[i].comment}."`;
   }
-
 
   //
   document.querySelector('main').classList.add('effects');

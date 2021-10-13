@@ -60,5 +60,20 @@ main {
 }
 
 .comments > li {
-  margin: 5px 0.5% ;
+  margin: 5px 0.5%;
+}
+
+.comments > li:nth-child(1) {
+  color: rgb(128, 128, 128);
+  font-style: italic;
+  margin-right: 2%;
+}
+
+.comments > li:nth-child(2) {
+  font-weight: 800;
+  font-size: large;
+}
+
+.comments > li:nth-child(3) {
+  margin: auto 4% auto 1%;
 }
