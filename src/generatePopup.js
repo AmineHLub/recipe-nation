@@ -86,10 +86,10 @@ const generatePopup = async (mealId) => {
     date.innerText = `${commentsArr[i].creation_date} `;
     const username = document.createElement('li');
     comments.append(username);
-    username.innerText = `${commentsArr[i].username} : `;
+    username.innerText = `${commentsArr[i].username} `;
     const message = document.createElement('li');
     comments.append(message);
-    message.innerText = ` "${commentsArr[i].comment}."`;
+    message.innerText = `: ${commentsArr[i].comment}`;
   }
 
   //
