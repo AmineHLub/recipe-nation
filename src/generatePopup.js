@@ -12,7 +12,6 @@ const generatePopup = async (mealId) => {
   const image = document.createElement('img');
   const mealName = document.createElement('h2');
   const mealDescription = document.createElement('div');
-  //
   const mealArea = document.createElement('p');
   mealArea.classList.add('meal-area');
   const mealType = document.createElement('p');
@@ -21,7 +20,6 @@ const generatePopup = async (mealId) => {
   mealInstructions.classList.add('meal-instructions');
   const watchYT = document.createElement('a');
   watchYT.classList.add('yt-btn');
-  //
   popup.classList.add('popup-modal');
   wrapper.classList.add('popup-wrapper');
   image.classList.add('popup-meal-img');
@@ -53,7 +51,31 @@ const generatePopup = async (mealId) => {
   watchYT.innerText = 'Youtube';
   watchYT.target = '_blank';
   watchYT.href = mealObj.strYoutube;
+  // comments
+  const commentsWrapper = document.createElement('section');
+  const commentsTag = document.createElement('span');
+  popup.append(commentsWrapper);
+  commentsWrapper.classList.add('comment-section');
+  commentsWrapper.append(commentsTag);
+  commentsTag.classList.add('comment-span');
+  commentsTag.innerText = `Comments (3)`;
+  for (let i = 0; i < 4; i += 1 ) {
+    const comments = document.createElement('ul');
+    comments.classList.add('comments');
+    commentsWrapper.append(comments);
+    const date = document.createElement('li');
+    comments.append(date);
+    date.innerText = '2016';
+    const username = document.createElement('li');
+    comments.append(username);
+    username.innerText = 'Alex : ';
+    const message = document.createElement('li');
+    comments.append(message);
+    message.innerText = 'My name is Alex !';
+  }
 
+
+  //
   document.querySelector('main').classList.add('effects');
   document.querySelector('header').classList.add('effects');
   document.querySelector('footer').classList.add('effects');
