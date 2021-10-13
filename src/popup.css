@@ -89,3 +89,57 @@
   background-color: rgb(197, 16, 16);
   color: white;
 }
+
+.adding-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  height: 220px;
+}
+
+.adding-name {
+  padding: 1.5px 7px;
+  height: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.adding-comment {
+  padding: 5px 13px;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.adding-comment,
+.adding-name {
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.644);
+}
+
+.adding-comment::placeholder,
+.adding-name::placeholder {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.adding-comment:focus,
+.adding-name:focus {
+  outline: none;
+  box-shadow: 0 0 4.5px rgb(0, 60, 255);
+}
+
+.adding-form > button {
+  color: rgba(224, 224, 224, 0.945);
+  align-self: flex-end;
+  border: none;
+  border-radius: 8px;
+  background-color: #2b2c2c;
+  height: 2rem;
+  width: 55px;
+}
+
+.adding-form > button:hover {
+  background-color: #00703c;
+  color: white;
+}
