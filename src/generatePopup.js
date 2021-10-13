@@ -1,7 +1,7 @@
 import closeIcon from './assets/close-icon.png';
 
-const generatePopup = async () => {
-  const fetchMeal = fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata');
+const generatePopup = async (mealId) => {
+  const fetchMeal = fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
   const get = await fetchMeal;
   const jsonObject = await get.json();
   const mealObj = jsonObject.meals[0];
@@ -19,6 +19,8 @@ const generatePopup = async () => {
   mealType.classList.add('meal-type');
   const mealInstructions = document.createElement('p');
   mealInstructions.classList.add('meal-instructions');
+  const watchYT = document.createElement('a');
+  watchYT.classList.add('yt-btn');
   //
   popup.classList.add('popup-modal');
   wrapper.classList.add('popup-wrapper');
@@ -39,14 +41,30 @@ const generatePopup = async () => {
   mealDescription.append(mealType);
   mealDescription.append(mealArea);
   mealDescription.append(mealInstructions);
+  mealDescription.append(watchYT);
   mealArea.innerText = `Area : ${mealObj.strArea}`;
   mealType.innerText = `Type : ${mealObj.strCategory}`;
-  mealInstructions.innerText = `${mealObj.strInstructions}`;
-  document.body.classList.add('effects');
+  // getting ingredients
+  let i = 1;
+  while ((mealObj[`strIngredient${i}`]) !== '') {
+    mealInstructions.innerText += `${mealObj[`strMeasure${i}`]} : ${mealObj[`strIngredient${i}`]}\n`;
+    i += 1;
+  }
+  watchYT.innerText = 'Youtube';
+  watchYT.target = '_blank';
+  watchYT.href = mealObj.strYoutube;
+
+  document.querySelector('main').classList.add('effects');
+  document.querySelector('header').classList.add('effects');
+  document.querySelector('footer').classList.add('effects');
+  document.body.style.overflow = 'hidden';
   // closing
   closeButton.addEventListener('click', () => {
     popup.remove();
-    document.body.classList.remove('effects');
+    document.querySelector('main').classList.remove('effects');
+    document.querySelector('header').classList.remove('effects');
+    document.querySelector('footer').classList.remove('effects');
+    document.body.style.overflow = 'auto';
   });
 };
 
