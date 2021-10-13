@@ -9,6 +9,7 @@ main {
 }
 
 .item-image {
+  cursor: pointer;
   width: 70%;
   border-radius: 5px;
 }
