@@ -1,22 +1,39 @@
+main {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 20px;
+  justify-items: center;
+}
+
 .item-image {
-  width: 200px;
-  height: 150px;
+  cursor: pointer;
+  width: 70%;
+  border-radius: 5px;
 }
 
 .item {
-  float: left;
-  width: 33.33%;
   text-align: center;
-  margin-top: 5%;
 }
 
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
+.item > h5 {
+  margin-top: 7px;
+  font-size: 1.1rem;
 }
 
 .c-btn {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  color: rgb(231, 231, 231);
+  margin-top: 0.6rem;
+  height: 2.5rem;
+  position: static;
+  border: none;
+  background-color: rgba(173, 82, 82, 0.938);
+  border-radius: 8px;
+}
+
+.c-btn:hover {
+  color: white;
+  background-color: rgb(100, 24, 24);
 }
