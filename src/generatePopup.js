@@ -83,7 +83,7 @@ const generatePopup = async (mealId) => {
       }
     });
   };
-  await apiCreation();
+  apiCreation();
   // adding new comments
   const addCommentsWrapper = document.createElement('section');
   const addCommentsTag = document.createElement('span');
@@ -92,9 +92,8 @@ const generatePopup = async (mealId) => {
   addCommentsWrapper.append(addCommentsTag);
   addCommentsTag.classList.add('comment-span');
   addCommentsTag.innerText = 'Add a new comment';
-  const inputForm = document.createElement('form');
+  const inputForm = document.createElement('div');
   inputForm.classList.add('adding-form');
-  inputForm.action = '#';
   const inputName = document.createElement('input');
   inputName.classList.add('adding-name');
   inputName.placeholder = 'Enter your name here...';
@@ -102,16 +101,17 @@ const generatePopup = async (mealId) => {
   inputComment.classList.add('adding-comment');
   inputComment.maxLength = '35';
   inputComment.placeholder = 'Enter your comment here...';
-  const inputButton = document.createElement('button');
+  const inputButton = document.createElement('a');
   addCommentsWrapper.append(inputForm);
   inputForm.append(inputName);
   inputForm.append(inputComment);
   inputForm.append(inputButton);
   inputButton.innerText = 'Add';
+  inputButton.href = '#';
   inputButton.addEventListener('click', async () => {
-    await addNewComment(mealId);
+    addNewComment(mealId);
     commentsWrapper.innerHTML = '';
-    setTimeout(apiCreation, 500);
+    setTimeout(apiCreation, 650);
   });
 
   //

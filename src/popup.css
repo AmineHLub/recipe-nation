@@ -129,17 +129,20 @@
   box-shadow: 0 0 4.5px rgb(0, 60, 255);
 }
 
-.adding-form > button {
-  color: rgba(224, 224, 224, 0.945);
+.adding-form > a {
+  text-decoration: none;
+  text-align: center;
   align-self: flex-end;
   border: none;
   border-radius: 8px;
   background-color: #2b2c2c;
+  color: rgba(224, 224, 224, 0.945);
   height: 2rem;
   width: 55px;
+  padding: 1%;
 }
 
-.adding-form > button:hover {
+.adding-form > a:hover {
   background-color: #00703c;
   color: white;
 }
