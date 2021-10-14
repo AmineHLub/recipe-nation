@@ -92,7 +92,7 @@ const generatePopup = async (mealId) => {
   addCommentsWrapper.append(addCommentsTag);
   addCommentsTag.classList.add('comment-span');
   addCommentsTag.innerText = 'Add a new comment';
-  const inputForm = document.createElement('form');
+  const inputForm = document.createElement('div');
   inputForm.classList.add('adding-form');
   const inputName = document.createElement('input');
   inputName.classList.add('adding-name');
@@ -111,7 +111,7 @@ const generatePopup = async (mealId) => {
   inputButton.addEventListener('click', async () => {
     addNewComment(mealId);
     commentsWrapper.innerHTML = '';
-    setTimeout(apiCreation, 500);
+    setTimeout(apiCreation, 650);
   });
 
   //
