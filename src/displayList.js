@@ -27,6 +27,7 @@ const sendList = () => {
         likes.classList.add('likes-counter');
         likes.innerText = `${likesCount} likes\n`;
         commentBtn.innerText = 'Comments';
+        commentBtn.addEventListener('click', generatePopup.bind(null, res.idMeal));
         document.querySelector('main').append(items);
         items.append(image);
         items.append(heading);
