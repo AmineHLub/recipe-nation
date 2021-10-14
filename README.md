@@ -37,12 +37,15 @@ To get a local copy up and running follow these simple example steps.
 
 - Jest (for testing) including jest-fetch-mock [Documentation](https://www.npmjs.com/package/jest-fetch-mock)
 
-
 ### Setup
 
 **Run** git clone https://github.com/AmineHLub/webpack-exercise.git
 
 **Test**
+
+Bable (core, preset-env)
+
+ECMAScript 6 transform plugin (npm install --save-dev @babel/plugin-transform-modules-commonjs)
 
 npm i jest
 
