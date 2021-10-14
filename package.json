@@ -23,7 +23,7 @@
     "style-loader": "^3.3.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "webpack serve --open",
     "build": "webpack"
   }
