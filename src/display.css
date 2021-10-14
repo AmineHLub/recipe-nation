@@ -85,6 +85,7 @@ main {
 }
 
 .fa-heart {
+  cursor: pointer;
   margin-right: 5px;
   color: rgb(194, 28, 28);
 }

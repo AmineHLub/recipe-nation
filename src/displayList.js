@@ -21,7 +21,6 @@ const sendList = () => {
         const commentBtn = document.createElement('button');
         const likes = document.createElement('span');
         const likeBtn = document.createElement('a');
-        likeBtn.setAttribute('href', '#');
         const likeIcon = document.createElement('i');
         likeIcon.classList.add('far');
         likeIcon.classList.add('fa-heart');
