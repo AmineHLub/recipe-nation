@@ -11,4 +11,4 @@ const commentsCounterMock = async () => {
   }
 };
 
-module.exports = commentsCounterMock;
+export default commentsCounterMock;

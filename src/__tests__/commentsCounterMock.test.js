@@ -1,6 +1,7 @@
-const commentsCounterMock = require('../__mocks__/commentsCounterMock.js');
+import { enableFetchMocks } from 'jest-fetch-mock';
+import commentsCounterMock from '../__mocks__/commentsCounterMock.js';
 
-require('jest-fetch-mock').enableMocks();
+enableFetchMocks();
 
 const realObjectMock = [
   {

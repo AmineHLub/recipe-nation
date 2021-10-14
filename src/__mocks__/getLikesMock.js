@@ -13,4 +13,4 @@ const getLikesMock = async (idMeal) => {
     // return likes;
   }
 };
-module.exports = getLikesMock;
+export default getLikesMock;
