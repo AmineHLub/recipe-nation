@@ -46,7 +46,6 @@ const sendList = () => {
           likes.innerText = '';
           setTimeout(async () => {
             const newlikes = await getLikes(res.idMeal).then((res) => res);
-            console.log(newlikes);
             likes.innerText = `${newlikes} likes \n`;
           }, 700);
         });
