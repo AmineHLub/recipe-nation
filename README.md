@@ -81,6 +81,8 @@ Give a ⭐️ if you like this project!
 
 - This project belongs to [Microverse](https://microverse.org/).
 
+- Attribution to Font Awesome by Dave Gandy - http://fontawesome.io
+
 ## 📝 License
 
 - This project is [MIT](./Licenses/MIT.md) licensed.
