@@ -20,9 +20,14 @@
 }
 
 .close-btn {
+  cursor: pointer;
   position: absolute;
   right: 25px;
   top: 20px;
+}
+
+.close-btn > img:hover {
+  filter: sepia(100);
 }
 
 .popup-wrapper {
