@@ -4,7 +4,8 @@
 
 > RecipeNation
 
-![screenshot](./app_screenshot.png)
+![screenshot](./screenshot1.png)
+![screenshot](./screenshot2.png)
 
 This is a website that features different types of famous meals and provide their recipes for users to cook them on their own ! Users also can like their favourite recipe and comment on it or if they think there can be something to be added.
 
