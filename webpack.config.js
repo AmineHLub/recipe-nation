@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/index.js', 'babel-polyfill', './test.js'],
+  entry: ['./src/index.js'],
   devServer: {
     static: './dist',
   },
