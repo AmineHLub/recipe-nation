@@ -34,16 +34,22 @@ To get a local copy up and running follow these simple example steps.
 
 - Node installed on the same folder
 
+- Jest (for testing) including jest-fetch-mock [Documentation](https://www.npmjs.com/package/jest-fetch-mock)
+
 
 ### Setup
 
 **Run** git clone https://github.com/AmineHLub/webpack-exercise.git
 
 **Test**
+
 npm i jest
 
+npm install --save-dev jest-fetch-mock
+
 ### Test
-npm run test 
+
+npm test 
 
 ## Authors
 

@@ -1,15 +1,6 @@
 import closeIcon from './assets/close-icon.png';
-
-// eslint-disable-next-line no-unused-vars
-class MessageObject {
-  constructor(mealId, username, message) {
-    this.item_id = mealId;
-    this.username = username;
-    this.comment = message;
-  }
-}
-
-const websiteID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5OvdDl22dcA0TUpGjcko';
+import addNewComment from './addNewComment.js';
+import commentsCounter from './commentsCounter.js';
 
 const generatePopup = async (mealId) => {
   // first API mealdb
@@ -64,33 +55,64 @@ const generatePopup = async (mealId) => {
   watchYT.target = '_blank';
   watchYT.href = mealObj.strYoutube;
   // comments
-  // Second API intervention
-  const fetchComments = fetch(`${websiteID}/comments?item_id=${24}`);
-  const getComments = await fetchComments;
-  const commentsjson = await getComments.json();
-  const commentsArr = commentsjson;
-  // creation
   const commentsWrapper = document.createElement('section');
-  const commentsTag = document.createElement('span');
-  popup.append(commentsWrapper);
   commentsWrapper.classList.add('comment-section');
-  commentsWrapper.append(commentsTag);
-  commentsTag.classList.add('comment-span');
-  commentsTag.innerText = `Comments (${commentsArr.length})`;
-  for (let i = 0; i < commentsArr.length; i += 1) {
-    const comments = document.createElement('ul');
-    comments.classList.add('comments');
-    commentsWrapper.append(comments);
-    const date = document.createElement('li');
-    comments.append(date);
-    date.innerText = `${commentsArr[i].creation_date} `;
-    const username = document.createElement('li');
-    comments.append(username);
-    username.innerText = `${commentsArr[i].username} `;
-    const message = document.createElement('li');
-    comments.append(message);
-    message.innerText = `: ${commentsArr[i].comment}`;
-  }
+  popup.append(commentsWrapper);
+
+  const apiCreation = () => {
+    commentsCounter(mealId).then((count) => {
+      const commentsTag = document.createElement('span');
+      commentsWrapper.append(commentsTag);
+      commentsTag.classList.add('comment-span');
+      if (typeof count.length !== 'number') { commentsTag.innerText = 'Comments (0)'; } else {
+        commentsTag.innerText = `Comments (${count.length})`;
+        for (let i = 0; i < count.length; i += 1) {
+          const comments = document.createElement('ul');
+          comments.classList.add('comments');
+          commentsWrapper.append(comments);
+          const date = document.createElement('li');
+          comments.append(date);
+          date.innerText = `${count[i].creation_date} `;
+          const username = document.createElement('li');
+          comments.append(username);
+          username.innerText = `${count[i].username} `;
+          const message = document.createElement('li');
+          comments.append(message);
+          message.innerText = `: ${count[i].comment}`;
+        }
+      }
+    });
+  };
+  await apiCreation();
+  // adding new comments
+  const addCommentsWrapper = document.createElement('section');
+  const addCommentsTag = document.createElement('span');
+  popup.append(addCommentsWrapper);
+  addCommentsWrapper.classList.add('comment-section');
+  addCommentsWrapper.append(addCommentsTag);
+  addCommentsTag.classList.add('comment-span');
+  addCommentsTag.innerText = 'Add a new comment';
+  const inputForm = document.createElement('form');
+  inputForm.classList.add('adding-form');
+  inputForm.action = '#';
+  const inputName = document.createElement('input');
+  inputName.classList.add('adding-name');
+  inputName.placeholder = 'Enter your name here...';
+  const inputComment = document.createElement('textarea');
+  inputComment.classList.add('adding-comment');
+  inputComment.maxLength = '35';
+  inputComment.placeholder = 'Enter your comment here...';
+  const inputButton = document.createElement('button');
+  addCommentsWrapper.append(inputForm);
+  inputForm.append(inputName);
+  inputForm.append(inputComment);
+  inputForm.append(inputButton);
+  inputButton.innerText = 'Add';
+  inputButton.addEventListener('click', async () => {
+    await addNewComment(mealId);
+    commentsWrapper.innerHTML = '';
+    setTimeout(apiCreation, 500);
+  });
 
   //
   document.querySelector('main').classList.add('effects');
