@@ -83,3 +83,8 @@ main {
   margin: auto 4% auto 1%;
   color: black;
 }
+
+.fa-heart {
+  margin-right: 5px;
+  color: rgb(194, 28, 28);
+}
