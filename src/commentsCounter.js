@@ -3,11 +3,16 @@ const commentsCounter = async (mealId) => {
     const websiteID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5OvdDl22dcA0TUpGjcko';
     const fetchComments = fetch(`${websiteID}/comments?item_id=${mealId}`);
     const getComments = await fetchComments;
-    const commentsjson = await getComments.json();
-    const commentsArr = commentsjson;
-    return commentsArr;
-  } catch (e) {
-    return null;
+    if (getComments.status > 399 && getComments.status < 600) {
+      throw Error('There are no comments for this meal');
+    } else {
+      const commentsjson = await getComments.json();
+      const commentsArr = commentsjson;
+      return commentsArr;
+    }
+  } catch {
+    const emptyArr = [];
+    return emptyArr;
   }
 };
 
