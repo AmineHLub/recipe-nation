@@ -1,0 +1,153 @@
+
+.effects {
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.popup-modal {
+  pointer-events: auto;
+  overflow: auto;
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.863);
+  border-radius: 8px;
+  box-shadow: 0 -2px 14px 2px rgba(0, 0, 0, 0.42);
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+}
+
+.close-btn > img:hover {
+  filter: sepia(100);
+}
+
+.popup-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 3%;
+}
+
+.popup-meal-img {
+  width: 30%;
+  height: 180px;
+  border-radius: 50% 0;
+}
+
+.popup-meal-name {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.popup-meal-description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 10px;
+  margin: 0.75rem 1%;
+}
+
+.meal-area {
+  grid-area: 1 / 1 / 2 / 2;
+  height: 2rem;
+}
+
+.meal-type {
+  justify-self: end;
+  grid-area: 1 / 2 / 2 / 3;
+  height: 2rem;
+}
+
+.meal-instructions {
+  margin-left: 15px;
+  grid-area: 2 / 1 / 7 / 2;
+  font-size: 0.7rem;
+  font-weight: bold;
+  justify-self: center;
+  align-self: center;
+}
+
+.yt-btn {
+  grid-area: 2 / 2 / 7 / 3;
+  padding: 1% 3%;
+  justify-self: end;
+  align-self: center;
+  margin-right: 15px;
+  border: 0.3px solid rgb(253, 111, 111);
+  color: rgb(253, 111, 111);
+  border-radius: 9px;
+}
+
+.yt-btn:hover {
+  cursor: pointer;
+  border: 0.3px solid rgb(197, 16, 16);
+  background-color: rgb(197, 16, 16);
+  color: white;
+}
+
+.adding-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  height: 220px;
+}
+
+.adding-name {
+  padding: 1.5px 7px;
+  height: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.adding-comment {
+  padding: 5px 13px;
+  height: 4.5rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.adding-comment,
+.adding-name {
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.644);
+}
+
+.adding-comment::placeholder,
+.adding-name::placeholder {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.adding-comment:focus,
+.adding-name:focus {
+  outline: none;
+  box-shadow: 0 0 4.5px rgb(0, 60, 255);
+}
+
+.adding-form > a {
+  text-decoration: none;
+  text-align: center;
+  align-self: flex-end;
+  border: none;
+  border-radius: 8px;
+  background-color: #2b2c2c;
+  color: rgba(224, 224, 224, 0.945);
+  height: 2rem;
+  width: 55px;
+  padding: 1%;
+}
+
+.adding-form > a:hover {
+  background-color: #00703c;
+  color: white;
+}
