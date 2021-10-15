@@ -64,22 +64,21 @@ const generatePopup = async (mealId) => {
       const commentsTag = document.createElement('span');
       commentsWrapper.append(commentsTag);
       commentsTag.classList.add('comment-span');
-      if (typeof count.length !== 'number') { commentsTag.innerText = 'Comments (0)'; } else {
-        commentsTag.innerText = `Comments (${count.length})`;
-        for (let i = 0; i < count.length; i += 1) {
-          const comments = document.createElement('ul');
-          comments.classList.add('comments');
-          commentsWrapper.append(comments);
-          const date = document.createElement('li');
-          comments.append(date);
-          date.innerText = `${count[i].creation_date} `;
-          const username = document.createElement('li');
-          comments.append(username);
-          username.innerText = `${count[i].username} `;
-          const message = document.createElement('li');
-          comments.append(message);
-          message.innerText = `: ${count[i].comment}`;
-        }
+
+      commentsTag.innerText = `Comments (${count.length})`;
+      for (let i = 0; i < count.length; i += 1) {
+        const comments = document.createElement('ul');
+        comments.classList.add('comments');
+        commentsWrapper.append(comments);
+        const date = document.createElement('li');
+        comments.append(date);
+        date.innerText = `${count[i].creation_date} `;
+        const username = document.createElement('li');
+        comments.append(username);
+        username.innerText = `${count[i].username} `;
+        const message = document.createElement('li');
+        comments.append(message);
+        message.innerText = `: ${count[i].comment}`;
       }
     });
   };
